@@ -1,6 +1,7 @@
 require('express-async-errors')
 const express = require('express')
 const winston = require('winston')
+const config = require('config')
 const errorHandler = require('./middlewares/error-handler')
 const app = express()
 
@@ -17,7 +18,8 @@ app.use('/api/v1/users', require('./routes/user'))
 app.use(errorHandler)
 
 
-const port = 3000
+const port = config.get('port') || 5000
+
 app.listen(port, function(){
     winston.info(`Server started at http://127.0.0.1:${port}`)
 })
