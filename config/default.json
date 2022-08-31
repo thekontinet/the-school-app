@@ -1,0 +1,7 @@
+{
+    "database" : {
+        "url" : "mongodb://localhost/school"
+    },
+
+    "jwtPrivateKey" : "My-secret-key"
+}
