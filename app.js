@@ -14,6 +14,8 @@ require('./startup/config')()
 app.use(express.json())
 app.use('/api/v1', require('./routes/index'))
 app.use('/api/v1', require('./routes/auth'))
+app.use('/api/v1/blog', require('./routes/blog'))
+app.use('/api/v1/course', require('./routes/courses'))
 app.use('/api/v1/users', require('./routes/user'))
 app.use(errorHandler)
 
