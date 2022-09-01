@@ -1,6 +1,5 @@
 const router = require('express').Router()
-const _ = require('lodash')
-const User = require('../models/user')
+const User = require('../models/user');
 const Joi = require('joi')
 
 router.post('/login', async function(req, res){
