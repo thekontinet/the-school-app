@@ -14,6 +14,8 @@ app.use(express.json())
 app.use('/api/v1', require('./routes/index'))
 app.use('/api/v1', require('./routes/auth'))
 app.use('/api/v1/users', require('./routes/user'))
+app.use('/admin', require('./routes/exam'))
+
 app.use(errorHandler)
 
 
