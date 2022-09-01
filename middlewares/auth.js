@@ -13,8 +13,6 @@ function auth(req, res, next){
     } catch (error) {
         return res.status(400).send('Unauthorized token')
     }
-
-    next()
 }
 
 module.exports = auth

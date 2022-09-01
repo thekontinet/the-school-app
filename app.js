@@ -10,7 +10,6 @@ require('./startup/database')()
 require('./startup/config')()
 
 
-
 app.use(express.json())
 app.use('/api/v1', require('./routes/index'))
 app.use('/api/v1', require('./routes/auth'))
@@ -25,3 +24,5 @@ const port = config.get('port') || 5000
 app.listen(port, function(){
     winston.info(`Server started at http://127.0.0.1:${port}`)
 })
+
+module.exports = app
