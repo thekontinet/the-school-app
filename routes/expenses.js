@@ -27,14 +27,13 @@ router.post('/', auth, async (req, res) => {
     res.send(expense)
 });
 
-router.delete('/delete/:id', auth, async (req, res) => {
+router.delete('/delete/:id', auth, async (req, res, next) => {
    try {
     const _id = req.params.id
      await Expense.findByIdAndDelete(_id)
      return res.send('deleted successfully')
    } catch (error) {
-    console.log(error)
-    return res.send('unable to delete')
+    next(error)
    }
 });
 
