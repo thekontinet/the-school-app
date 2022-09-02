@@ -13,6 +13,7 @@ require('./startup/config')()
 app.use(express.json())
 app.use('/api/v1', require('./routes/index'))
 app.use('/api/v1', require('./routes/auth'))
+app.use('/api/v1/expenses', require('./routes/expenses'))
 app.use('/api/v1/users', require('./routes/user'))
 app.use(errorHandler)
 
